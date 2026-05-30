@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@keyframes slowspin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes waveRing {
+  0%   { transform: scale(1);   opacity: 0.65; }
+  100% { transform: scale(2.8); opacity: 0;    }
+}
+
+@keyframes heroMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-work-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-work-sans), 'Work Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-dm-serif), 'DM Serif Display', serif;
+}
+
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  font-family: var(--font-source-sans), 'Source Sans 3', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+[data-reveal] {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translate3d(0, 42px, 0);
+  transition:
+    opacity 900ms ease,
+    filter 900ms ease,
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, filter, transform;
+}
+
+[data-reveal="left"] {
+  transform: translate3d(-56px, 0, 0);
+}
+
+[data-reveal="right"] {
+  transform: translate3d(56px, 0, 0);
+}
+
+[data-reveal="top"] {
+  transform: translate3d(0, -44px, 0);
+}
+
+[data-reveal="bottom"] {
+  transform: translate3d(0, 44px, 0);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 767px) {
+  [data-reveal="left"],
+  [data-reveal="right"] {
+    transform: translate3d(0, 34px, 0);
+  }
+
+  [data-reveal="top"] {
+    transform: translate3d(0, -24px, 0);
+  }
+
+  [data-reveal="bottom"] {
+    transform: translate3d(0, 34px, 0);
+  }
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
