@@ -94,7 +94,7 @@ export default function Footer() {
           <h2 className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: GOLD }}>
             Visit Us
           </h2>
-          <div className="mt-5 overflow-hidden rounded-tl-[32px] rounded-br-[32px] border border-[#0F3F37]/15 bg-[#0F3F37]/5">
+          <div className="mt-5 overflow-hidden rounded-[20px] border border-[#0F3F37]/15 bg-[#0F3F37]/5">
             <iframe
               title="Skinsa Aesthetic Clinic location map"
             src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d42017.06488967416!2d73.89896950179276!3d18.583703416770764!3m2!1i1024!2i768!4f13.1!2m1!1sShop%20no%20101%2C102%2C%20B%20wing%2C%20shubh%20gateway%2C%20Opp.Symbiosis%20law%20school%2C%20viman%20Nagar%2C%20pune%2C%20Mh%20411014!5e0!3m2!1sen!2sus!4v1779885414989!5m2!1sen!2sus"
