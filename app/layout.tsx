@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Source_Sans_3, Work_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/component/navbar";
 import ScrollToTop from "@/component/scroll-to-top";
@@ -30,19 +31,18 @@ export const metadata: Metadata = {
   description: "Premium aesthetic skincare clinic",
   icons: {
     icon: [
-      { url:"/logo-skinsa.jpg", sizes: "any" },
-      { url:"/logo-skinsa.jpg", sizes: "16x16", type: "image/png" },
-      { url:"/logo-skinsa.jpg", sizes: "32x32", type: "image/png" },
+      { url: "/logo-skinsa.jpg", sizes: "any" },
+      { url: "/logo-skinsa.jpg", sizes: "16x16", type: "image/png" },
+      { url: "/logo-skinsa.jpg", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url:"/logo-skinsa.jpg", sizes: "180x180", type: "image/png" },
+      { url: "/logo-skinsa.jpg", sizes: "180x180", type: "image/png" },
     ],
     other: [
-      { rel: "icon", url:"/logo-skinsa.jpg", sizes: "192x192", type: "image/png" },
-      { rel: "icon", url:"/logo-skinsa.jpg", sizes: "512x512", type: "image/png" },
+      { rel: "icon", url: "/logo-skinsa.jpg", sizes: "192x192", type: "image/png" },
+      { rel: "icon", url: "/logo-skinsa.jpg", sizes: "512x512", type: "image/png" },
     ],
   },
-
 };
 
 export default function RootLayout({
@@ -53,6 +53,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSerif.variable} ${workSans.variable} ${sourceSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-[family-name:var(--font-work-sans)]">
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=AW-17635706476`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17635706476');
+          `}
+        </Script>
+        
         {/* <ScrollToTop /> */}
         <RevealObserver />
         {children}
