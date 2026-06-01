@@ -5,8 +5,8 @@ import { type CSSProperties, type ReactNode, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 const GOLD  = "#C9A96E";
-const BG    = "#0F3F37";
-const GREEN = "#0F3F37";
+const BG    = "#2d726d";
+const GREEN = "#2d726d";
 
 type BookingButtonProps = {
   children: ReactNode;
