@@ -42,7 +42,7 @@ function normalizeSubmission(body: Record<string, unknown>): SubmissionBody {
     source: toText(body.source) || 'Consultation Modal',
     name: toText(body.name),
     phone: toText(body.phone),
-    concern: toText(body.concern) || toText(body.condition),
+    concern: toText(body.concern),
     treatment: toText(body.treatment),
     pageUrl: toText(body.pageUrl),
   };
@@ -104,7 +104,6 @@ async function pushToSheet(body: SubmissionBody, timestamp: string, telecrmStatu
       name: body.name,
       phone: body.phone,
       concern: body.concern,
-      condition: body.concern,
       treatment: body.treatment,
       pageUrl: body.pageUrl,
       url: body.pageUrl,
@@ -156,7 +155,7 @@ async function pushToTeleCRM(body: SubmissionBody): Promise<TelecrmResponse | nu
     actions: [
       { type: 'SYSTEM_NOTE', text: `Source: ${body.source || 'Website'}` },
       { type: 'SYSTEM_NOTE', text: `URL: ${body.pageUrl || 'Not specified'}` },
-      { type: 'SYSTEM_NOTE', text: `Condition: ${body.concern || 'Not specified'}` },
+      { type: 'SYSTEM_NOTE', text: `Concern: ${body.concern || 'Not specified'}` },
       { type: 'SYSTEM_NOTE', text: `Treatment: ${body.treatment || 'Not specified'}` },
     ],
   };
