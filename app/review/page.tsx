@@ -77,7 +77,7 @@ export default function ReviewPage() {
 
       <div className="relative w-full max-w-md bg-white rounded-[28px] shadow-[0_24px_72px_rgba(0,0,0,0.35)] px-8 py-10 flex flex-col items-center gap-5">
 
-        <div className="absolute top-0 left-10 right-10 h-[3px] rounded-full bg-[#2d726d]" />
+        {/* <div className="absolute top-0 left-10 right-10 h-[3px] rounded-full bg-[#2d726d]" /> */}
 
         {/* Header */}
         <div className="flex flex-col items-center gap-0.5 text-center pt-2">
