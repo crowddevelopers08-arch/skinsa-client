@@ -9,10 +9,13 @@ import FAQ from "@/component/faq";
 // import Navbar from "@/component/navbar";
 import SparkleHero from "@/component/sparkle-hero";
 import Footer from "@/component/footer";
+import MobileActionBar from "@/component/mobile-bar";
 
 export default function Home() {
   return (
     <main>
+      
+      <MobileActionBar />
       {/* <Navbar /> */}
       <SparkleHero />
       <BeforeAfter />

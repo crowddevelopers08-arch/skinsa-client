@@ -70,7 +70,6 @@ export default function RootLayout({
         {/* <ScrollToTop /> */}
         <RevealObserver />
         {children}
-        <MobileActionBar />
       </body>
     </html>
   );
